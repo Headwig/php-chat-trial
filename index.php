@@ -1,5 +1,7 @@
 <?php 
  include 'db.php';
+   session_start();
+
 ?>
  
 <!DOCTYPE html>
@@ -33,7 +35,9 @@
     
     <form method="post" action="index.php">
     
-    <input type="text" name="name" placeholder="Enter name"/>
+    <input type="text" name="name" placeholder="Enter Sender"/>
+    <input type="text" name="rname" placeholder="Enter Receiver"/>
+
       <textarea name="message" placeholder="Enter Message"></textarea>  
         <input type="submit" name="submit" value="Send it"/> 
     
@@ -43,8 +47,20 @@
     if(isset($_POST['submit']))
     {
             $name=$_POST['name'];
+            $rec=$_POST['rname'];
+            $chatid1=$name.$rec;
+            $chatid2=$rec.$name;
+
+            $_SESSION["name"]="$name";
+            $_SESSION["rname"]="$rec";
+            $_SESSION["chatid1"]="$chatid1";
+            $_SESSION["chatid2"]="$chatid2";
+
+            
+
+
             $message=$_POST['message'];
-            $query="INSERT INTO CHAT2 (name,message)values ('$name', '$message')";
+            $query="INSERT INTO CHAT2 (name,message,receiver,chatid)values ('$name', '$message','$rec','$chatid1')";
             $run = $con->query($query);
         
         if($run)
