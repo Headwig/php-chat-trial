@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2017 at 02:39 AM
+-- Generation Time: Jul 01, 2017 at 07:11 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -29,23 +29,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `chat2` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
   `receiver` varchar(255) NOT NULL,
   `chatid` varchar(255) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `chat2`
---
-
-INSERT INTO `chat2` (`id`, `name`, `password`, `message`, `receiver`, `chatid`, `date`) VALUES
-(155, 'germany', '', 'Guten morgen', 'india', 'germanyindia', '2017-07-01 00:31:21'),
-(156, 'india', '', 'hi', 'US', 'indiaUS', '2017-07-01 00:31:50'),
-(157, 'india', '', 'lol', 'germany', 'indiagermany', '2017-07-01 00:32:04'),
-(158, 'germany', '', 'Hello TRUMP', 'US', 'germanyUS', '2017-07-01 00:33:22'),
-(159, 'india', '', 'poop\r\n', 'US', 'indiaUS', '2017-07-01 00:33:38');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +54,7 @@ ALTER TABLE `chat2`
 -- AUTO_INCREMENT for table `chat2`
 --
 ALTER TABLE `chat2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

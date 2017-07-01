@@ -3,13 +3,14 @@
        session_start();
     if(isset($_SESSION['chatid1']))
     {
+            
              $c= $_SESSION["chatid1"];
             $cc=  $_SESSION["chatid2"];
     }
 
     $user=$_SESSION["username"];
             
-                                 $con = mysqli_connect("localhost","root","","chat2");
+$con = mysqli_connect("localhost","root","","chat2");
 if(!$con)
 {
     echo"Failed to connect to MySQL: ",mysqli_connect_error();
@@ -32,7 +33,7 @@ $s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2) AND name='$user'"
     }
     else
     {
-        #echo "0 results " ;
+        #echo "No messages to display " ;
     }
    
 }
@@ -40,9 +41,9 @@ $s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2) AND name='$user'"
     {
         
     
-    $query="SELECT *  FROM chat2 WHERE chatid='$c' OR chatid='$cc' ";
+    $query="SELECT *  FROM chat2 WHERE (chatid='$c' OR chatid='$cc') AND message!='' ";
     $run=$con->query($query);
-    while($row=$run->fetch_array()) :
+    while($row=$run->fetch_array() ) :
 ?>
         
     

@@ -16,7 +16,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-    
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <title>Lets chat </title>    
     <link rel="stylesheet" href="style.css">
     <script>
@@ -33,14 +33,15 @@ else
         setInterval(function(){ajax()}, 1000);
     </script>
     <script> 
-            var count = 1;
     function moveNumbers(num) {
-        alert("You are now chatting with "+num); 
+        //alert("You are now chatting with "+num); 
     var txt=document.getElementById("result").value;
     txt=num;
     document.getElementById("result").value=txt;
-    
+        document.getElementById('sendit').click();
     }
+        
+
 
 </script>
 </head>
@@ -58,7 +59,7 @@ else
                     $res = mysqli_query($con, $qry);
                     if(mysqli_num_rows($res)>0){
                         while($row0=mysqli_fetch_assoc($res)){
-                            echo "<input class='countries_l' type='button' value='" . $row0['country'] . "' onclick='moveNumbers(this.value)'>" ;
+                            echo "<input class='countries_l' type='button' value='" . $row0['country'] . "' onclick='moveNumbers(this.value)'  >" ;
                             echo "<br>";
                         }
                     }
@@ -83,7 +84,7 @@ else
         
 
       <textarea name="message" placeholder="Enter Message"></textarea>  
-        <input type="submit" name="submit" value="Send it" /> 
+        <input type="submit" name="submit" value="Send it" id="sendit" /> 
     
     </form>
     <?php
