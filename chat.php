@@ -1,9 +1,13 @@
 <?php
     include 'db.php';
        session_start();
+    if(isset($_SESSION['chatid1']))
+    {
+             $c= $_SESSION["chatid1"];
+            $cc=  $_SESSION["chatid2"];
+    }
 
-     $c= $_SESSION["chatid1"];
-    $cc=  $_SESSION["chatid2"];
+    $user=$_SESSION["username"];
             
                                  $con = mysqli_connect("localhost","root","","chat2");
 if(!$con)
@@ -13,7 +17,7 @@ if(!$con)
 }
 else
 {
-$s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2);";
+$s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2) AND name='$user'";
  $result=mysqli_query($con,$s);
     if(mysqli_num_rows($result)>0)
     {
@@ -32,6 +36,10 @@ $s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2);";
     }
    
 }
+    if(isset($_SESSION['chatid1']))
+    {
+        
+    
     $query="SELECT *  FROM chat2 WHERE chatid='$c' OR chatid='$cc' ";
     $run=$con->query($query);
     while($row=$run->fetch_array()) :
@@ -47,7 +55,7 @@ $s="SELECT * FROM chat2 WHERE id = (SELECT MAX(id) FROM chat2);";
     <span style="float:right"><?php echo formatDate($row['date'])?></span>
 </div>
 
-<?php endwhile;?>
+<?php endwhile;}?>
 <html>
 <body>
     
