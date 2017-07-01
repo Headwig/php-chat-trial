@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2017 at 01:56 AM
+-- Generation Time: Jul 01, 2017 at 02:39 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `chat2` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
   `receiver` varchar(255) NOT NULL,
   `chatid` varchar(255) NOT NULL,
@@ -39,17 +40,12 @@ CREATE TABLE `chat2` (
 -- Dumping data for table `chat2`
 --
 
-INSERT INTO `chat2` (`id`, `name`, `message`, `receiver`, `chatid`, `date`) VALUES
-(30, 'India', 'Hello', 'US', 'IndiaUS', '2017-06-29 23:50:52'),
-(31, 'India', 'Hello', 'US', 'IndiaUS', '2017-06-29 23:51:07'),
-(32, 'US', 'Hello There Modi !', 'India', 'USIndia', '2017-06-29 23:51:27'),
-(33, 'India', 'Hi !', 'UK', 'IndiaUK', '2017-06-29 23:51:45'),
-(34, 'UK', 'Hello India ! ', 'India', 'UKIndia', '2017-06-29 23:52:05'),
-(35, 'India ', 'Holla', 'Sri Lanka ', 'India Sri Lanka ', '2017-06-29 23:53:31'),
-(36, 'sri Lanka', 'Kutta Kamina Janwar.', 'India', 'sri LankaIndia', '2017-06-29 23:53:51'),
-(37, 'Sri Lanka ', 'Sssup', 'India ', 'Sri Lanka India ', '2017-06-29 23:54:08'),
-(38, 'US', 'Holla !!!!', 'UK', 'USUK', '2017-06-29 23:55:31'),
-(39, 'UK', 'hey nigga !', 'US', 'UKUS', '2017-06-29 23:55:51');
+INSERT INTO `chat2` (`id`, `name`, `password`, `message`, `receiver`, `chatid`, `date`) VALUES
+(155, 'germany', '', 'Guten morgen', 'india', 'germanyindia', '2017-07-01 00:31:21'),
+(156, 'india', '', 'hi', 'US', 'indiaUS', '2017-07-01 00:31:50'),
+(157, 'india', '', 'lol', 'germany', 'indiagermany', '2017-07-01 00:32:04'),
+(158, 'germany', '', 'Hello TRUMP', 'US', 'germanyUS', '2017-07-01 00:33:22'),
+(159, 'india', '', 'poop\r\n', 'US', 'indiaUS', '2017-07-01 00:33:38');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +66,7 @@ ALTER TABLE `chat2`
 -- AUTO_INCREMENT for table `chat2`
 --
 ALTER TABLE `chat2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
