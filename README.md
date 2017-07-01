@@ -14,6 +14,6 @@ After Update #2
 Things to fix : Fixed all the above issues . The new bugs are :
 
 1) Still Looks ugly.Fix UI . 
-2) On clicking the country button the previous chat data should load up.
+2) On clicking the country button the previous chat data should load up. - Done!
 3) Make dynamic database for the user on login . If he has previouly done a log in then check for existing DB.
 4) Find out a way to notify the user of new messages.
