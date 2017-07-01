@@ -1,5 +1,5 @@
 # php-chat-trial
-Just create a database with the name chat2 and import the uploaded sql file . 
+Just create a database with the name chat2 and import the uploaded sql files . One table is for login while the other is for chat message exchange.
 After Update #1 
 Things to fix :
 
